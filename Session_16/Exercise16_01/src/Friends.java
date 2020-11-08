@@ -20,7 +20,6 @@ public class Friends
     {
       String friendsName;
 
-
       System.out.print("Type in friends name (or QUIT, to exit): ");
       friendsName = input.nextLine();
 
