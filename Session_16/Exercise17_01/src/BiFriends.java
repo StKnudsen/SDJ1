@@ -5,7 +5,7 @@ public class BiFriends
 {
   public static void main(String[] args) throws IOException
   {
-    String filename = "Session_16/friends.bin";
+    String filename = "Session_16/Exercise17_01/friends.bin";
     File file = new File(filename);
     boolean doHaveFriends = true;
 

@@ -10,7 +10,7 @@ public class Friends
     String filename = "friends.txt";
     boolean doHaveFriends = true;
 
-    File file = new File(filename);
+    File file = new File("Session_16/Exercise16_01/Friends.txt");
 
     PrintWriter out = new PrintWriter(file);
 
