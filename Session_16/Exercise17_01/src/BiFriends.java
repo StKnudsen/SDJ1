@@ -28,7 +28,8 @@ public class BiFriends
       }
       else
       {
-        out.writeUTF(friendsName);
+        //out.writeUTF(friendsName);
+        out.writeObject(friendsName);
       }
     }
 

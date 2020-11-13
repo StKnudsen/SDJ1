@@ -6,17 +6,25 @@ public class TestStudentFile
   public static void main(String[] args)
       throws FileNotFoundException, ParseException
   {
-    StudentFile studentFile = new StudentFile("Session_16/Exercise16_04/Students.txt");
+    // What file are we reading from:
+    StudentFile studentFile = new StudentFile("Session_16/Exercise16_04/txt/Students.txt");
+
+    // Read the content of that file:
     StudentList studentList = studentFile.readTextFile();
 
-    StudentFile writeStudentFile = new StudentFile("Session_16/Exercise16_04/writeStudents.txt");
+    // Angiv hvilken fil der skal skrives til
+    StudentFile writeStudentFile = new StudentFile("Session_16/Exercise16_04/txt/writeStudents.txt");
 
+    // Sortere efter navn
     studentList.sortByName();
+
+    // Skriv indholdet fra studenList til writeStudentFile
     writeStudentFile.writeTextFile(studentList);
+
 
     for (int groupNumber : studentList.getGroupNumbers())
     {
-      StudentFile studentGroup = new StudentFile("Session_16/Exercise16_04/StudentGroup" + groupNumber + ".txt");
+      StudentFile studentGroup = new StudentFile("Session_16/Exercise16_04/txt/StudentGroup" + groupNumber + ".txt");
       studentGroup.writeTextFile(studentList.getByGroup(groupNumber));
     }
   }
