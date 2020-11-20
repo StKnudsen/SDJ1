@@ -8,6 +8,7 @@ public class EndToEnd
     ArrayList<Integer> integers = new ArrayList<>();
     boolean doAddNumber = true;
     final String endTrigger = "end";
+    int sum = 0;
 
     Scanner input = new Scanner(System.in);
 
@@ -50,6 +51,12 @@ public class EndToEnd
       }
     }
 
-    System.out.println("Program successfully ended");
+    for (int number: integers)
+    {
+      sum += number;
+    }
+
+
+    System.out.println("Program successfully ended, with the end sum: " + sum);
   }
 }

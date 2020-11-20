@@ -18,15 +18,17 @@ public class TxtFiles implements StoreStuff
     out.println(obj.toString());
 
     out.close();
-    System.out.println("End writing students to file: " + fileSave.getAbsolutePath());
   }
 
-  @Override public Object load(String file)
+  @Override public Object load(String file) throws FileNotFoundException
   {
-    Scanner input = new Scanner(System.in);
-    System.out.print("Enter filename to load: ");
-    String filename = input.nextLine();
+    File filename = new File(file);
+    Scanner in = new Scanner(filename);
 
-    return new File("Session_16/Exercise17_04/" + filename + ".txt");
+    String line = in.nextLine();
+
+    in.close();
+
+    return line;
   }
 }

@@ -8,9 +8,11 @@ public class ManyNumbers
     double[] numbers;
     int[] indexOfNumbers = new int[2];
     int amount = 0, index;
-    String operation = "";
     boolean gotOperation = false;
     boolean gotIndex;
+
+    String operation = "";
+    String howManyNumbers = "How many numbers will you type? ";
 
     Scanner input = new Scanner(System.in);
 
@@ -18,12 +20,20 @@ public class ManyNumbers
     {
       try
       {
-        System.out.print("How many numbers will you type in? ");
+        System.out.print(howManyNumbers);
         amount = input.nextInt();
-        input.nextLine();
+        if (amount < 1)
+        {
+          amount = 0;
+          howManyNumbers = "HOW MANY NUMBERS WILL YOU TYPE? ";
+        }
+        //else {
+        //  input.nextLine();
+        //}
       }
       catch (Exception e)
       {
+        howManyNumbers = "HOW MANY NUMBERS WILL YOU TYPE? ";
         input.next();
       }
     }
@@ -79,7 +89,7 @@ public class ManyNumbers
           value = input.nextInt();
           input.nextLine();
 
-          System.out.println(i + " " + value);
+          //System.out.println(i + " " + value);
 
           if (value >= 0 && value < amount)
           {

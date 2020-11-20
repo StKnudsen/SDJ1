@@ -6,7 +6,6 @@ public class BiReadFile
   public static void main(String[] args) throws IOException
   {
     String filename;
-    boolean hasFriends = true;
 
     Scanner input = new Scanner(System.in);
 
@@ -18,7 +17,7 @@ public class BiReadFile
     FileInputStream fis = new FileInputStream(file);
     ObjectInputStream in = new ObjectInputStream(fis);
 
-    while (hasFriends)
+    while (fis.available() > 0)
     {
       try
       {
@@ -27,7 +26,7 @@ public class BiReadFile
       }
       catch (Exception e)
       {
-        hasFriends = false;
+        //
       }
     }
 

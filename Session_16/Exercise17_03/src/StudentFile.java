@@ -134,13 +134,12 @@ public class StudentFile
       try
       {
          StudentList studentList = new StudentList();
-         boolean hasObjects = true;
          File file = getFile();
 
          FileInputStream fis = new FileInputStream(file);
          ObjectInputStream in = new ObjectInputStream(fis);
 
-         while (hasObjects)
+         while (fis.available() > 0)
          {
             try
             {
@@ -148,7 +147,7 @@ public class StudentFile
             }
             catch (Exception e)
             {
-               hasObjects = false;
+               //
             }
          }
 
